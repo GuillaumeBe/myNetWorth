@@ -30,7 +30,7 @@ export const SubTitle = styled.h3`
 
 export const Inputs = styled.div`
   flex: 1;
-  margin: 0 2%;
+  margin: 0 5%;
 `;
 
 export const NetWorth = styled.div`
