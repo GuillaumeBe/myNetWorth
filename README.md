@@ -1,3 +1,3 @@
-<h1 style="text-align:center">myNetWorth</h1>
+<h1>Marvel frontend</h1>
 
 Typescript, styled-components

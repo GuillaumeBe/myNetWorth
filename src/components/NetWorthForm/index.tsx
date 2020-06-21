@@ -11,7 +11,6 @@ import {
 } from "./styles";
 import Input from "../Input";
 import Button from "../Button";
-import { findAllByDisplayValue } from "@testing-library/react";
 
 const NetWorthForm: FC = () => {
   const [state, setState] = useState<IState>({
@@ -67,7 +66,7 @@ const NetWorthForm: FC = () => {
           <Input
             label="Immobilier"
             name="realEstate"
-            onChange={({ target: { name, value } }) =>
+            onChange={({ currentTarget: { name, value } }) =>
               handleChange({ type: "assets", name, value })
             }
             value={state.assets.realEstate}
@@ -76,7 +75,7 @@ const NetWorthForm: FC = () => {
           <Input
             label="PEA"
             name="pea"
-            onChange={({ target: { name, value } }) =>
+            onChange={({ currentTarget: { name, value } }) =>
               handleChange({ type: "assets", name, value })
             }
             value={state.assets.pea}
@@ -85,7 +84,7 @@ const NetWorthForm: FC = () => {
           <Input
             label="Compte titre"
             name="ct"
-            onChange={({ target: { name, value } }) =>
+            onChange={({ currentTarget: { name, value } }) =>
               handleChange({ type: "assets", name, value })
             }
             value={state.assets.ct}
@@ -94,7 +93,7 @@ const NetWorthForm: FC = () => {
           <Input
             label="Assurance vie"
             name="lifeInsurance"
-            onChange={({ target: { name, value } }) =>
+            onChange={({ currentTarget: { name, value } }) =>
               handleChange({ type: "assets", name, value })
             }
             value={state.assets.lifeInsurance}
@@ -106,7 +105,7 @@ const NetWorthForm: FC = () => {
                 key={index}
                 label={`Epargne ${index + 1}`}
                 name="savings"
-                onChange={({ target: { name, value } }) =>
+                onChange={({ currentTarget: { name, value } }) =>
                   handleChange({ type: "assets", name, value, index })
                 }
                 value={element}
@@ -135,7 +134,7 @@ const NetWorthForm: FC = () => {
           <Input
             label="Immobilier"
             name="realEstate"
-            onChange={({ target: { name, value } }) =>
+            onChange={({ currentTarget: { name, value } }) =>
               handleChange({ type: "liabilities", name, value })
             }
             value={state.liabilities.realEstate}
@@ -143,7 +142,7 @@ const NetWorthForm: FC = () => {
           <Input
             label="Prêt étudiant"
             name="studentLoan"
-            onChange={({ target: { name, value } }) =>
+            onChange={({ currentTarget: { name, value } }) =>
               handleChange({ type: "liabilities", name, value })
             }
             value={state.liabilities.studentLoan}
@@ -155,7 +154,7 @@ const NetWorthForm: FC = () => {
                   key={index}
                   label={`Crédit conso ${index + 1}`}
                   name="consumerCredits"
-                  onChange={({ target: { name, value } }) =>
+                  onChange={({ currentTarget: { name, value } }) =>
                     handleChange({ type: "liabilities", name, value, index })
                   }
                   value={element}
