@@ -18,9 +18,19 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
+export const SubTitles = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
 export const SubTitle = styled.h3`
   text-align: center;
   margin-bottom: 2rem;
+`;
+
+export const Inputs = styled.div`
+  flex: 1;
+  margin: 0 2%;
 `;
 
 export const NetWorth = styled.div`

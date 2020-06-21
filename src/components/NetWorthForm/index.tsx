@@ -6,8 +6,10 @@ import {
   StyledNetWorthForm,
   Title,
   SubTitle,
+  SubTitles,
   NetWorth,
   Image,
+  Inputs,
 } from "./styles";
 import Input from "../Input";
 import Button from "../Button";
@@ -60,9 +62,12 @@ const NetWorthForm: FC = () => {
   return (
     <Wrapper>
       <Title>myNetWorth</Title>
+      <SubTitles>
+        <SubTitle>Actifs - Valorisation</SubTitle>
+        <SubTitle>Passifs - Capital restant dû</SubTitle>
+      </SubTitles>
       <StyledNetWorthForm>
-        <div>
-          <SubTitle>Actifs - Valorisation</SubTitle>
+        <Inputs isAsset>
           <Input
             label="Immobilier"
             name="realEstate"
@@ -127,9 +132,8 @@ const NetWorthForm: FC = () => {
           >
             Ajouter une épargne
           </Button>
-        </div>
-        <div>
-          <SubTitle>Passifs - Capital restant dû</SubTitle>
+        </Inputs>
+        <Inputs>
           <Input
             label="Immobilier"
             name="realEstate"
@@ -174,7 +178,7 @@ const NetWorthForm: FC = () => {
           >
             Ajouter un crédit conso
           </Button>
-        </div>
+        </Inputs>
       </StyledNetWorthForm>
       <NumberFormat
         value={netWorth}

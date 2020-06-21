@@ -19,7 +19,7 @@ export const StyledInput = styled.input`
   height: 2rem;
   border: 0;
   outline: none;
-
+  width: 100%;
   ${({ isAsset }) =>
     isAsset
       ? css`
@@ -27,5 +27,5 @@ export const StyledInput = styled.input`
         `
       : css`
           border-bottom: 1px solid #ef476f;
-        `}
+        `};
 `;
