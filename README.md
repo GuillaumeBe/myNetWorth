@@ -1,4 +1,4 @@
-<h1>Marvel frontend</h1>
+<h1>myNetWorth</h1>
 
 https://vibrant-ride-18ed02.netlify.app
 
