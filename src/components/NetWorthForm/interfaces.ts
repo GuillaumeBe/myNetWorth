@@ -20,6 +20,6 @@ export interface IState {
 export interface HandleChangeType {
   type: string;
   name: string;
-  value: number;
+  value: string;
   index?: number;
 }
