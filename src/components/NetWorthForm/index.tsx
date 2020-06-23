@@ -10,9 +10,9 @@ import {
   NetWorth,
   Image,
   Inputs,
+  Button,
 } from "./styles";
 import Input from "../Input";
-import Button from "../Button";
 
 const NetWorthForm: FC = () => {
   const [state, setState] = useState<IState>({

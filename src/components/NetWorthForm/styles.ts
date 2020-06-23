@@ -33,6 +33,31 @@ export const Inputs = styled.div`
   margin: 0 5%;
 `;
 
+export const Button = styled.button`
+  border: 0;
+  color: white;
+  outline: none;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 6px;
+  padding: 0.7rem 1.3rem;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  ${({ isAsset }) =>
+    isAsset
+      ? css`
+          background-color: #06d6a0;
+        `
+      : css`
+          background-color: #ef476f;
+        `};
+`;
+
 export const NetWorth = styled.div`
   font-weight: bold;
   text-align: center;
