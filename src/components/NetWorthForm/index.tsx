@@ -120,6 +120,7 @@ const NetWorthForm: FC = () => {
           })}
           <Button
             isAsset
+            type="button"
             onClick={() =>
               setState({
                 ...state,
@@ -166,6 +167,7 @@ const NetWorthForm: FC = () => {
             }
           )}
           <Button
+            type="button"
             onClick={() =>
               setState({
                 ...state,
