@@ -1,7 +1,9 @@
 import React, { useState, FC } from "react";
 import NumberFormat from "react-number-format";
-import { IState, HandleChangeType } from "./interfaces";
+
+import { State, HandleChange } from "./interfaces";
 import {
+  Container,
   Wrapper,
   StyledNetWorthForm,
   Title,
@@ -15,7 +17,7 @@ import {
 import Input from "../Input";
 
 const NetWorthForm: FC = () => {
-  const [state, setState] = useState<IState>({
+  const [state, setState] = useState<State>({
     assets: {
       realEstate: "",
       pea: "",
@@ -30,7 +32,7 @@ const NetWorthForm: FC = () => {
     },
   });
 
-  const handleChange = ({ type, name, value, index }: HandleChangeType) => {
+  const handleChange = ({ type, name, value, index }: HandleChange) => {
     setState({
       ...state,
       [type]: {
@@ -60,140 +62,142 @@ const NetWorthForm: FC = () => {
         }, 0) || 0;
 
   return (
-    <Wrapper>
-      <Title>myNetWorth</Title>
-      <SubTitles>
-        <SubTitle>Actifs - Valorisation</SubTitle>
-        <SubTitle>Passifs - Capital restant dû</SubTitle>
-      </SubTitles>
-      <StyledNetWorthForm>
-        <Inputs isAsset>
-          <Input
-            label="Immobilier"
-            name="realEstate"
-            onChange={({ currentTarget: { name, value } }) =>
-              handleChange({ type: "assets", name, value })
-            }
-            value={state.assets.realEstate}
-            isAsset
-          />
-          <Input
-            label="PEA"
-            name="pea"
-            onChange={({ currentTarget: { name, value } }) =>
-              handleChange({ type: "assets", name, value })
-            }
-            value={state.assets.pea}
-            isAsset
-          />
-          <Input
-            label="Compte titre"
-            name="ct"
-            onChange={({ currentTarget: { name, value } }) =>
-              handleChange({ type: "assets", name, value })
-            }
-            value={state.assets.ct}
-            isAsset
-          />
-          <Input
-            label="Assurance vie"
-            name="lifeInsurance"
-            onChange={({ currentTarget: { name, value } }) =>
-              handleChange({ type: "assets", name, value })
-            }
-            value={state.assets.lifeInsurance}
-            isAsset
-          />
-          {state.assets.savings.map((element: string, index: number) => {
-            return (
-              <Input
-                key={index}
-                label={`Epargne ${index + 1}`}
-                name="savings"
-                onChange={({ currentTarget: { name, value } }) =>
-                  handleChange({ type: "assets", name, value, index })
-                }
-                value={element}
-                isAsset
-              />
-            );
-          })}
-          <Button
-            isAsset
-            type="button"
-            onClick={() =>
-              setState({
-                ...state,
-                assets: {
-                  ...state.assets,
-                  savings: [...state.assets.savings, ""],
-                },
-              })
-            }
-          >
-            Ajouter une épargne
-          </Button>
-        </Inputs>
-        <Inputs>
-          <Input
-            label="Immobilier"
-            name="realEstate"
-            onChange={({ currentTarget: { name, value } }) =>
-              handleChange({ type: "liabilities", name, value })
-            }
-            value={state.liabilities.realEstate}
-          />
-          <Input
-            label="Prêt étudiant"
-            name="studentLoan"
-            onChange={({ currentTarget: { name, value } }) =>
-              handleChange({ type: "liabilities", name, value })
-            }
-            value={state.liabilities.studentLoan}
-          />
-          {state.liabilities.consumerCredits.map(
-            (element: string, index: number) => {
+    <Container>
+      <Wrapper>
+        <Title>myNetWorth</Title>
+        <SubTitles>
+          <SubTitle>Actifs - Valorisation</SubTitle>
+          <SubTitle>Passifs - Capital restant dû</SubTitle>
+        </SubTitles>
+        <StyledNetWorthForm>
+          <Inputs isAsset>
+            <Input
+              label="Immobilier"
+              name="realEstate"
+              handleChange={({ currentTarget: { name, value } }) =>
+                handleChange({ type: "assets", name, value })
+              }
+              value={state.assets.realEstate}
+              isAsset
+            />
+            <Input
+              label="PEA"
+              name="pea"
+              handleChange={({ currentTarget: { name, value } }) =>
+                handleChange({ type: "assets", name, value })
+              }
+              value={state.assets.pea}
+              isAsset
+            />
+            <Input
+              label="Compte titre"
+              name="ct"
+              handleChange={({ currentTarget: { name, value } }) =>
+                handleChange({ type: "assets", name, value })
+              }
+              value={state.assets.ct}
+              isAsset
+            />
+            <Input
+              label="Assurance vie"
+              name="lifeInsurance"
+              handleChange={({ currentTarget: { name, value } }) =>
+                handleChange({ type: "assets", name, value })
+              }
+              value={state.assets.lifeInsurance}
+              isAsset
+            />
+            {state.assets.savings.map((element: string, index: number) => {
               return (
                 <Input
                   key={index}
-                  label={`Crédit conso ${index + 1}`}
-                  name="consumerCredits"
-                  onChange={({ currentTarget: { name, value } }) =>
-                    handleChange({ type: "liabilities", name, value, index })
+                  label={`Epargne ${index + 1}`}
+                  name="savings"
+                  handleChange={({ currentTarget: { name, value } }) =>
+                    handleChange({ type: "assets", name, value, index })
                   }
                   value={element}
+                  isAsset
                 />
               );
-            }
-          )}
-          <Button
-            type="button"
-            onClick={() =>
-              setState({
-                ...state,
-                liabilities: {
-                  ...state.liabilities,
-                  consumerCredits: [...state.liabilities.consumerCredits, ""],
-                },
-              })
-            }
-          >
-            Ajouter un crédit conso
-          </Button>
-        </Inputs>
-      </StyledNetWorthForm>
-      <NumberFormat
-        value={netWorth}
-        displayType="text"
-        thousandSeparator=" "
-        renderText={(value) => <NetWorth>{value} €</NetWorth>}
-      />
-      <Image
-        src={netWorth >= 1000000 ? "bill.jpg" : "broke.png"}
-        alt="Broke"
-        height="150"
-      />
-    </Wrapper>
+            })}
+            <Button
+              isAsset
+              type="button"
+              onClick={() =>
+                setState({
+                  ...state,
+                  assets: {
+                    ...state.assets,
+                    savings: [...state.assets.savings, ""],
+                  },
+                })
+              }
+            >
+              Ajouter une épargne
+            </Button>
+          </Inputs>
+          <Inputs>
+            <Input
+              label="Immobilier"
+              name="realEstate"
+              handleChange={({ currentTarget: { name, value } }) =>
+                handleChange({ type: "liabilities", name, value })
+              }
+              value={state.liabilities.realEstate}
+            />
+            <Input
+              label="Prêt étudiant"
+              name="studentLoan"
+              handleChange={({ currentTarget: { name, value } }) =>
+                handleChange({ type: "liabilities", name, value })
+              }
+              value={state.liabilities.studentLoan}
+            />
+            {state.liabilities.consumerCredits.map(
+              (element: string, index: number) => {
+                return (
+                  <Input
+                    key={index}
+                    label={`Crédit conso ${index + 1}`}
+                    name="consumerCredits"
+                    handleChange={({ currentTarget: { name, value } }) =>
+                      handleChange({ type: "liabilities", name, value, index })
+                    }
+                    value={element}
+                  />
+                );
+              }
+            )}
+            <Button
+              type="button"
+              onClick={() =>
+                setState({
+                  ...state,
+                  liabilities: {
+                    ...state.liabilities,
+                    consumerCredits: [...state.liabilities.consumerCredits, ""],
+                  },
+                })
+              }
+            >
+              Ajouter un crédit conso
+            </Button>
+          </Inputs>
+        </StyledNetWorthForm>
+        <NumberFormat
+          value={netWorth}
+          displayType="text"
+          thousandSeparator=" "
+          renderText={(value) => <NetWorth>{value} €</NetWorth>}
+        />
+        <Image
+          src={netWorth >= 1000000 ? "bill.jpg" : "broke.png"}
+          alt="Broke"
+          height="150"
+        />
+      </Wrapper>
+    </Container>
   );
 };
 

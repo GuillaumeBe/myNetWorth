@@ -1,5 +1,12 @@
 import styled, { css } from "styled-components";
 
+export const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+`;
+
 export const Wrapper = styled.div`
   width: 35rem;
   min-height: 55rem;

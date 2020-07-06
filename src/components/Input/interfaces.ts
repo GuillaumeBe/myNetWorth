@@ -1,7 +1,7 @@
-export interface IProps {
+export interface Props {
   label: string;
   name: string;
   value: string;
-  onChange: React.FormEventHandler<HTMLInputElement>;
+  handleChange: React.FormEventHandler<HTMLInputElement>;
   isAsset?: boolean;
 }

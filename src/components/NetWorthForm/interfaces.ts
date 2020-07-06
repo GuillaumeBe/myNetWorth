@@ -1,4 +1,4 @@
-interface IAsset {
+interface Asset {
   realEstate: string;
   pea: string;
   ct: string;
@@ -6,18 +6,18 @@ interface IAsset {
   savings: string[];
 }
 
-interface ILiabilities {
+interface Liabilities {
   realEstate: string;
   studentLoan: string;
   consumerCredits: string[];
 }
 
-export interface IState {
-  assets: IAsset;
-  liabilities: ILiabilities;
+export interface State {
+  assets: Asset;
+  liabilities: Liabilities;
 }
 
-export interface HandleChangeType {
+export interface HandleChange {
   type: string;
   name: string;
   value: string;

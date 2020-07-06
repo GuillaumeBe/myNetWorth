@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 
-import { IProps } from "./interfaces";
+import { Props } from "./interfaces";
 import { Wrapper, StyledInput } from "./styles";
 
-const Input: FC<IProps> = ({ label, name, value, onChange, isAsset }) => {
+const Input: FC<Props> = ({ label, name, value, handleChange, isAsset }) => {
   return (
     <Wrapper isAsset={isAsset}>
       <label htmlFor={name}>{label}</label>
@@ -12,7 +12,7 @@ const Input: FC<IProps> = ({ label, name, value, onChange, isAsset }) => {
         name={name}
         value={value}
         isAsset={isAsset}
-        onChange={onChange}
+        onChange={handleChange}
         min={0}
       />
     </Wrapper>
