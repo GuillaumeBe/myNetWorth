@@ -20,6 +20,8 @@ export const StyledInput = styled.input`
   border: 0;
   outline: none;
   width: 100%;
+  background-color: #fafafa;
+
   ${({ isAsset }) =>
     isAsset
       ? css`

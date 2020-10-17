@@ -1,17 +1,15 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
+  display: grid;
+  place-items: center;
+  height: 100%;
 `;
 
 export const Wrapper = styled.div`
   width: 35rem;
-  min-height: 55rem;
   border-radius: 6px;
-  background-color: white;
+  background-color: #fafafa;
   box-shadow: 0 0 6px -2px #00000080;
 `;
 
@@ -21,8 +19,11 @@ export const StyledNetWorthForm = styled.form`
 `;
 
 export const Title = styled.h1`
-  margin-top: 2.5rem;
+  font-family: "Fredoka One", cursive;
+  font-size: 2rem;
+  margin: 2rem 0;
   text-align: center;
+  font-family: "Fredoka One", cursive;
 `;
 
 export const SubTitles = styled.div`
@@ -30,8 +31,8 @@ export const SubTitles = styled.div`
   justify-content: space-around;
 `;
 
-export const SubTitle = styled.h3`
-  text-align: center;
+export const SubTitle = styled.h2`
+  font-size: 1.1rem;
   margin-bottom: 2rem;
 `;
 
@@ -47,7 +48,7 @@ export const Button = styled.button`
   display: block;
   margin: auto;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.3s;
   border-radius: 6px;
   padding: 0.7rem 1.3rem;
 

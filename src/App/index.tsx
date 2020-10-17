@@ -14,9 +14,9 @@ import {
   Inputs,
   Button,
 } from "./styles";
-import Input from "../Input";
+import Input from "../components/Input";
 
-const NetWorthForm: FC = () => {
+const App: FC = () => {
   const [state, setState] = useState<State>({
     assets: {
       realEstate: "",
@@ -201,4 +201,4 @@ const NetWorthForm: FC = () => {
   );
 };
 
-export default NetWorthForm;
+export default App;
