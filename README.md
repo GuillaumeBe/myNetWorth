@@ -1,7 +1,7 @@
 <h1 align="center">myNetWorth</h1>
 
 <p align="center">
-  <img width="500" src="./src/assets/screen.jpg" alt="capture-1">
+  <img width="500" src="./src/assets/screen.jpg" alt="screen">
 </p>
 
 <p align="center">Demo: <a href="https://vibrant-ride-18ed02.netlify.app" target="_blank">https://vibrant-ride-18ed02.netlify.app</a>
