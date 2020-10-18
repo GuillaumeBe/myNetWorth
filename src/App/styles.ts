@@ -86,8 +86,8 @@ export const Image = styled.img`
     }
   }
 
-  ${({ src }) =>
-    src === "bill.jpg" &&
+  ${({ isBill }) =>
+    isBill &&
     css`
       animation: rotation 2s infinite linear;
     `}

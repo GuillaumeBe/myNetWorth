@@ -1,9 +1,9 @@
 import React, { useState, FC } from "react";
 import NumberFormat from "react-number-format";
 
+import Input from "../components/Input";
 import bill from "../assets/bill.jpg";
 import broke from "../assets/broke.png";
-
 import { State, HandleChange } from "./interfaces";
 import {
   Container,
@@ -17,7 +17,6 @@ import {
   Inputs,
   Button,
 } from "./styles";
-import Input from "../components/Input";
 
 const App: FC = () => {
   const [state, setState] = useState<State>({
@@ -196,7 +195,8 @@ const App: FC = () => {
         />
         <Image
           src={netWorth >= 1000000 ? bill : broke}
-          alt="Broke"
+          isBill={netWorth >= 1000000}
+          alt="Image"
           height="150"
         />
       </Wrapper>
