@@ -1,6 +1,9 @@
 import React, { useState, FC } from "react";
 import NumberFormat from "react-number-format";
 
+import bill from "../assets/bill.jpg";
+import broke from "../assets/broke.png";
+
 import { State, HandleChange } from "./interfaces";
 import {
   Container,
@@ -192,7 +195,7 @@ const App: FC = () => {
           renderText={(value) => <NetWorth>{value} €</NetWorth>}
         />
         <Image
-          src={netWorth >= 1000000 ? "bill.jpg" : "broke.png"}
+          src={netWorth >= 1000000 ? bill : broke}
           alt="Broke"
           height="150"
         />
