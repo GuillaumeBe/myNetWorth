@@ -51,19 +51,11 @@ export const Button = styled.button`
   transition: 0.3s;
   border-radius: 6px;
   padding: 0.7rem 1.3rem;
+  background-color: ${({ isAsset }) => (isAsset ? "#06d6a0" : "#ef476f")};
 
   &:hover {
     transform: scale(1.1);
   }
-
-  ${({ isAsset }) =>
-    isAsset
-      ? css`
-          background-color: #06d6a0;
-        `
-      : css`
-          background-color: #ef476f;
-        `};
 `;
 
 export const NetWorth = styled.div`
