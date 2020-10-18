@@ -4,14 +4,16 @@
   <img width="500" src="./src/assets/screen.jpg" alt="capture-1">
 </p>
 
-<p align="center">Demo:<a href="https://vibrant-ride-18ed02.netlify.app" target="_blank">https://vibrant-ride-18ed02.netlify.app</a>
+<p align="center">Demo: <a href="https://vibrant-ride-18ed02.netlify.app" target="_blank">https://vibrant-ride-18ed02.netlify.app</a>
 </p>
 
 <p align="center">
- This project was bootstrapped with <a href=https://github.com/facebook/create-react-app. target="_blank">Create React App</a>
+ This project was bootstrapped with <a href=https://github.com/facebook/create-react-app target="_blank">Create React App</a>
 </p>
 
 ## Overview
+
+**Languages, frameworks and libraries**
 
 - TypeScript
 - React
@@ -30,8 +32,8 @@
 Clone this repository :
 
 ```
-git clone https://github.com/LilaGuill/marvel-frontend.git
-cd marvel-frontend
+git clone https://github.com/GuillaumeBe/myNetWorth.git
+cd myNetWorth
 ```
 
 Install packages :
