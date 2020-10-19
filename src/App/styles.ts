@@ -7,7 +7,9 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  width: 35rem;
+  margin: 1rem 0;
+  max-width: 35rem; 
+  width: 90%;
   border-radius: 6px;
   background-color: #fafafa;
   box-shadow: 0 0 6px -2px #00000080;
@@ -29,6 +31,8 @@ export const Title = styled.h1`
 export const SubTitles = styled.div`
   display: flex;
   justify-content: space-around;
+  text-align: center;
+
 `;
 
 export const SubTitle = styled.h2`
