@@ -8,10 +8,14 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   margin: 1rem;
-  max-width: 35rem; 
+  padding: 1rem;
   border-radius: 6px;
   background-color: #fafafa;
   box-shadow: 0 0 6px -2px #00000080;
+
+  @media (min-width: 768px) {
+    width: 40rem;
+  }
 `;
 
 export const StyledNetWorthForm = styled.form`
@@ -22,7 +26,7 @@ export const StyledNetWorthForm = styled.form`
 export const Title = styled.h1`
   font-family: "Fredoka One", cursive;
   font-size: 2rem;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem 0;
   text-align: center;
   font-family: "Fredoka One", cursive;
 `;
@@ -31,7 +35,6 @@ export const SubTitles = styled.div`
   display: flex;
   justify-content: space-around;
   text-align: center;
-
 `;
 
 export const SubTitle = styled.h2`
