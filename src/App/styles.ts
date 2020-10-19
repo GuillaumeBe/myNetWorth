@@ -7,9 +7,9 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  margin: 1rem 0;
+  margin: 1rem;
   max-width: 35rem; 
-  width: 90%;
+  width: 100%;
   border-radius: 6px;
   background-color: #fafafa;
   box-shadow: 0 0 6px -2px #00000080;
